@@ -16,7 +16,7 @@ public class Client {
 
         Socket socket = new Socket("127.0.0.1", 8080);
 
-        Utils.writeMessage(socket,name);
+        Utils.writeMessage(socket, name);
 
         System.out.println("连接成功！");
 
@@ -40,7 +40,7 @@ public class Client {
                 String message = line.substring(colonIndex + 1);
 
                 String json = JSON.toJSONString(new Message(id, message));
-                Utils.writeMessage(socket,json);
+                Utils.writeMessage(socket, json);
             }
 
 

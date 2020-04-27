@@ -35,7 +35,7 @@ public class Server {
 
     public void clientOnLine(ClientConnection clientWhoHasJustLoggedIn) {
         clients.values().forEach(client ->
-                dispatchMessage(client, "系统", "所有人", clientWhoHasJustLoggedIn.getClineName() + "上线了！"+getAllClientInfo()));
+                dispatchMessage(client, "系统", "所有人", clientWhoHasJustLoggedIn.getClineName() + "上线了！" + getAllClientInfo()));
     }
 
     public void sendMessage(ClientConnection src, Message message) {
@@ -56,7 +56,7 @@ public class Server {
     public void clientOffLine(ClientConnection clientConnection) {
         clients.remove(clientConnection.getClineId());
         clients.values().forEach(client ->
-                dispatchMessage(client, "系统", "所有人", clientConnection.getClineName() + "下线了！"+getAllClientInfo()));
+                dispatchMessage(client, "系统", "所有人", clientConnection.getClineName() + "下线了！" + getAllClientInfo()));
     }
 
     private void dispatchMessage(ClientConnection client, String src, String target, String message) {
@@ -67,8 +67,8 @@ public class Server {
         }
     }
 
-    private String getAllClientInfo(){
-        return clients.entrySet().stream().map(entry -> entry.getKey()+":"+entry.getValue().getClineName()).collect(Collectors.joining(","));
+    private String getAllClientInfo() {
+        return clients.entrySet().stream().map(entry -> entry.getKey() + ":" + entry.getValue().getClineName()).collect(Collectors.joining(","));
     }
 
 }

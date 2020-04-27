@@ -58,6 +58,6 @@ public class ClientConnection extends Thread {
     }
 
     public void sendMessage(String message) throws IOException {
-        Utils.writeMessage(socket,message);
+        Utils.writeMessage(socket, message);
     }
 }
